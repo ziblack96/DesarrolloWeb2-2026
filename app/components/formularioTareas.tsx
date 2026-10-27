@@ -11,6 +11,10 @@ export default function FormularioTareas() {
   const [listaTareas, setlistaTareas] = useState<Tareas[]>([]);
   const [estadoActual, setestadoActual] = useState<estado>("Pendiente");
 
+  const eliminarListado = (titulo: string) => {
+    setlistaTareas(listaTareas.filter((listado) => listado.titulo !== titulo));
+  };
+
   function AgregarTareas() {
     const tareas: Tareas = {
       id: Date.now(),
@@ -64,6 +68,7 @@ export default function FormularioTareas() {
               <th>Titulo</th>
               <th>Descripcion</th>
               <th>Estado</th>
+              <th>Eliminar</th>
             </tr>
           </thead>
           <tbody>
@@ -115,6 +120,24 @@ export default function FormularioTareas() {
                     >
                       Completado
                     </button>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    {listaTareas.map((listado) => (
+                      <div key={listado.titulo}>
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          onClick={() => {
+                            eliminarListado(listado.titulo);
+                          }}
+                        >
+                          {" "}
+                          Eliminar Tarea
+                        </button>
+                      </div>
+                    ))}
                   </div>
                 </td>
               </tr>
