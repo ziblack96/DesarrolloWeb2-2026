@@ -4,7 +4,8 @@ import { Preguntas } from "../Modelos/Preguntas";
 export const ContextTrivia = createContext({
   listaPreguntas: [] as Preguntas[],
   preguntaActual: [] as Preguntas[],
-  guardarPreguntaActual: (respuestaCorrecta: number) => {},
+  guardarPuntajeActual: (respuestaCorrecta: number) => {},
+  estadopreguntaActual: (listaPreguntas: Preguntas) => {},
   guardarpreguntasRespondidas: (preguntaRespondida: number) => {},
   IncrementoPuntaje: (puntaje: number) => {},
 });

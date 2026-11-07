@@ -64,7 +64,7 @@ export default function Layout({ children }: Props) {
     setpreguntaActual([...preguntaActual,listaPreguntas]);
   };
 
-  function guardarPreguntaActual(respuestaCorrecta:number) {
+  function guardarPuntajeActual(respuestaCorrecta:number) {
     console.log(respuestaCorrecta);
     setpuntajeAcumulado([...puntajeAcumulado]);
   }
@@ -73,10 +73,11 @@ export default function Layout({ children }: Props) {
     console.log(preguntaRespondida);
     setpreguntasRespondidas([...preguntasRespondidas]);
   }
+  
 
-  function IncrementoPuntaje(){
+  function IncrementoPuntaje(puntajePregunta:listaPreguntas){
     console.log("Puntaje Incrementado");
-    
+    setlistaPreguntas(puntajePregunta+1)
   }
 
 
@@ -85,7 +86,8 @@ export default function Layout({ children }: Props) {
       value={{
         listaPreguntas,
         preguntaActual,
-        guardarPreguntaActual,
+        estadopreguntaActual,
+        guardarPuntajeActual,
         guardarpreguntasRespondidas,
         IncrementoPuntaje,
       }}
