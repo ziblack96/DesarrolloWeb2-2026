@@ -1,0 +1,18 @@
+{
+  "name": "9.-tarea-charjs-tarea",
+  "version": "1.0.0",
+  "description": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "chart.js": "^4.6.1",
+    "cors": "^2.8.6",
+    "express": "^5.3.0",
+    "mysql2": "^3.24.6",
+    "react-chartjs-2": "^5.3.1",
+    "sequelize": "^6.37.8"
+  }
+}
